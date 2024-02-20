@@ -15,10 +15,10 @@ public class LeerArchivo {
 
             
             while ((linea = br.readLine()) != null) {
-                
+                if (!linea.trim().isEmpty()) {
                 int numero = Integer.parseInt(linea.trim());
                 numeros.add(numero);
-
+                }
             }
         } catch (NumberFormatException e) {
             System.err.println("Error al convertir a número: " + e.getMessage());

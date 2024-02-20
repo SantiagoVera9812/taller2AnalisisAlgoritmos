@@ -28,6 +28,13 @@ public class App
                     break;
                 }
             }
+            
+            if (EsMitadImparRecursivo.esMitadImpar(numeros)) {
+                System.out.println("Sistema comprometido");
+            } else {
+                System.out.println("Sistema seguro");
+            }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
