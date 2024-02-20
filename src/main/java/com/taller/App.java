@@ -15,7 +15,7 @@ public class App
             numeros = LeerArchivo.readAndProcessFile(rutaArchivo);
 
             for (int numero : numeros) {
-                if (numero % 2 == 0) {
+                if (EsHonesto.esPar(numero)) {
                     System.out.println(numero + " es par");
                 } else {
                     System.out.println(numero + " es impar");
