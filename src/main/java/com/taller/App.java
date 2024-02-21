@@ -12,6 +12,8 @@ public class App
 
         try {
             
+            long startTime = System.currentTimeMillis();
+            
             List<Integer> numeros = new ArrayList<>();
 
             numeros = LeerArchivo.readAndProcessFile(rutaArchivo);
@@ -22,7 +24,7 @@ public class App
                 contador++;
                 if (!EsHonesto.esPar(numero)) {
                     oddCount++;
-                    System.out.println(numero + " Numero impar encontrado");
+                    
                 }
 
                 if (oddCount >= halfSize) {
@@ -32,13 +34,24 @@ public class App
             }
             if(contador == numeros.size())
             System.out.println("Sistema seguro");
+            long endTime = System.currentTimeMillis();
+    
+            long elapsedTime = endTime - startTime;
+            System.out.println("Tiempo de ejecución: " + (double) elapsedTime / 1000 + " segundos");
+        
             System.out.println("************************************************");
-            
+            long startTime2 = System.currentTimeMillis();
             if (EsMitadImparRecursivo.esMitadImpar(numeros)) {
                 System.out.println("Sistema comprometido");
             } else {
                 System.out.println("Sistema seguro");
             }
+
+            long endTime2 = System.currentTimeMillis();
+    
+            // Calcula y muestra el tiempo de ejecución en segundos
+            long elapsedTime2 = endTime2 - startTime2;
+            System.out.println("Tiempo de ejecución: " + (double) elapsedTime2 / 1000 + " segundos");
 
         } catch (IOException e) {
             e.printStackTrace();
